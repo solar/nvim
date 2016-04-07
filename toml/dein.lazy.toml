@@ -1,0 +1,234 @@
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_source = 'source $VIMRCDIR/rc/plugins/unite.vim'
+hook_add = 'source $VIMRCDIR/rc/plugins/unite_add.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_map = [['n', '<Plug>']]
+on_path = '.*'
+hook_add = '''
+    nnoremap <silent> <Space>f :<C-u>VimFilerBufferDir -invisible<CR>
+    nnoremap <silent> <Space>F :<C-u>VimFilerSplit<CR>
+'''
+hook_source = 'source $VIMRCDIR/rc/plugins/vimfiler.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/neopairs.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/tabpagebuffer.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+on_i = 1
+hook_add = '''
+let g:echodoc_enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_path = '.*'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'lambdalisue/unite-grep-vcs'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'tsukkee/unite-tag'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'tacroe/unite-mark'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'tsukkee/unite-help'
+on_source  =  'unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+on_i = 1
+
+[[plugins]]
+repo = 'kana/vim-niceblock'
+on_map = [['x', '<Plug>']]
+hook_add = '''
+    xmap I <Plug>(niceblock-I)
+    xmap A <Plug>(niceblock-A)
+'''
+
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
+on_ft = ['unite', 'quickfix']
+hook_source = '''
+    autocmd MyAuto FileType qf nnoremap <buffer> r :<C-u>Qfreplace<CR>
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_map = [['n', '<Plug>']]
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+hook_add = 'let g:go_disable_autoinstall = 1'
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+depends = 'vim-operator-user'
+on_map = [['nx', '<Plug>']]
+hook_add = 'xmap p <Plug>(operator-replace)'
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+depends = 'vim-operator-user'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+    nmap <silent>Sa <Plug>(operator-surround-append)
+    nmap <silent>Sd <Plug>(operator-surround-delete)
+    nmap <silent>Sr <Plug>(operator-surround-replace)
+'''
+
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+    nmap <silent>j <Plug>(accelerated_jk_gj)
+    nmap <silent>k <Plug>(accelerated_jk_gk)
+'''
+
+[[plugins]]
+repo = 't9md/vim-choosewin'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+    nmap <silent>sw <Plug>(choosewin)
+    let g:choosewin_overlay_enable = 1
+    let g:choosewin_overlay_clear_multibyte = 1
+    let g:choosewin_blank_on_land = 0
+'''
+
+[[plugins]]
+repo = 'sgur/unite-qf'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Konfekt/FastFold'
+on_i = 1
+hook_post_source = 'FastFoldUpdate'
+
+[[plugins]]
+repo = 'saihoooooooo/glowshi-ft.vim'
+on_map = [['nx', '<Plug>']]
+hook_add = '''
+  let g:glowshi_ft_no_default_key_mappings = 1
+  nmap f <Plug>(glowshi-ft-f)
+  xmap f <Plug>(glowshi-ft-f)
+  nmap F <Plug>(glowshi-ft-F)
+  xmap F <Plug>(glowshi-ft-F)
+  let g:glowshi_ft_timeoutlen = 2000
+'''
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_cmd = 'PrevimOpen'
+depends = 'open-browser.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-jplus'
+on_map = [['n', '<Plug>']]
+hook_add = 'nmap J <Plug>(jplus)'
+
+[[plugins]]
+repo = 'lambdalisue/vim-gita'
+on_cmd = 'Gita'
+hook_add = '''
+  nnoremap <silent> <Space>gs  :<C-u>Gita status<CR>
+  nnoremap <silent> <Space>gc  :<C-u>Gita commit<CR>
+  nnoremap <silent> <Space>ga  :<C-u>Gita commit --amend<CR>
+  nnoremap <silent> <Space>gd  :<C-u>Gita diff<CR>
+  nnoremap <silent> <Space>gb  :<C-u>Gita browse<CR>
+  nnoremap <silent> <Space>gl  :<C-u>Gita blame<CR>
+  let gita#features#commit#enable_default_mappings = 0
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+  let g:gista#github_user = 'solar'
+  let g:gista#directory = expand(UserTmpDir() . '/gista')
+'''
+
+[[plugins]]
+repo = 'artur-shaik/vim-javacomplete2'
+on_ft = 'java'
+hook_source = '''
+  au MyAuto FileType java setlocal omnifunc=javacomplete#Complete
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-findent'
+on_path = '.*'
+hook_add = '''
+  nnoremap <silent> <Space>i    :<C-u>Findent! --no-warnings<CR>
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+  nmap w <Plug>(easymotion-lineforward)
+  nnoremap W     w
+  nmap b <Plug>(easymotion-linebackward)
+  nnoremap B     b
+  nmap <Space><Space> <Plug>(easymotion-prefix)
+  nmap / <Plug>(easymotion-sn)
+  omap / <Plug>(easymotion-tn)
+  let g:EasyMotion_startofline = 0
+  let g:EasyMotion_show_prompt = 0
+  let g:EasyMotion_verbose = 0
+  let g:EasyMotion_use_migemo = 1
+  let g:EasyMotion_smartcase = 1
+'''
+
+[[plugins]]
+repo = 'kana/vim-smartchr'
+on_i = 1
+hook_source = '''
+source $VIMRCDIR/rc/plugins/vim-smartchr.vim
+'''
+
+[[plugins]]
+repo = 'xmledit'
+on_ft = 'xml'
+
+[[plugins]]
+repo = 'othree/eregex.vim'
+on_cmd = ['E2v', 'M', 'S', 'G', 'G!', 'V']
+on_add = 'let g:eregex_default_enable = 0'

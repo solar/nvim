@@ -1,0 +1,65 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+on_ft = 'scala'
+
+[[plugins]]
+repo = 'nginx.vim'
+on_ft = 'nginx'
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown', 'mkd']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+
+[[plugins]]
+repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+hook_add  =  '''
+set background=dark
+au MyAuto VimEnter * colorscheme hybrid
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+build = 'make'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+set t_Co=256
+source $VIMRCDIR/rc/plugins/lightline.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'thinca/vim-localrc'
