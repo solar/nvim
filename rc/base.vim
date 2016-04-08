@@ -52,3 +52,5 @@ set foldopen=hor
 set foldclose=
 
 set showtabline=2
+
+set maxfuncdepth=200

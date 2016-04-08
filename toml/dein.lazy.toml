@@ -239,10 +239,5 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'theevocater/thrift.vim'
-on_ft = 'thrift'
-
-[[plugins]]
-repo = 'docker/docker'
-rtp = 'contrib/syntax/vim'
-on_ft = 'dockerfile'
+repo = 'benekastah/neomake'
+on_cmd = ['Neomake']

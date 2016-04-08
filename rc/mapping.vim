@@ -79,7 +79,7 @@ nnoremap sL <C-w>L
 
 " 挿入モードでIME状態を記憶させない
 inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
-inoremap <silent> <C-]> <ESC>:set iminsert=0<CR>
+inoremap <silent> <C-[> <ESC>:set iminsert=0<CR>
 
 " バッファを削除する際、ウィンドウレイアウトを維持する
 :com! Bd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
@@ -88,7 +88,7 @@ inoremap <silent> <C-]> <ESC>:set iminsert=0<CR>
 nnoremap Y y$
 
 " nvim-terminal
-tnoremap <C-]> <C-\><C-n>
+tnoremap <C-[> <C-\><C-n>
 
 " Quickfix
 nnoremap <Space>qn :<C-u>cnext<CR>
