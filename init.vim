@@ -10,14 +10,11 @@ function! s:source_rc(path, ...) abort "{{{
     return
   endif
 
-  "{{{
-
   " substitute all 'set' to 'setglobal'
   let content = map(readfile(abspath),
         \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
   " create tempfile and source the tempfile
   let tempfile = tempname()
-  "}}}
   try
     call writefile(content, tempfile)
     execute printf('source %s', fnameescape(tempfile))

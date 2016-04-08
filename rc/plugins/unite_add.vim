@@ -10,7 +10,7 @@ nnoremap <silent> <SID>[unite]T
       \   :<C-u>Unite -immediately -no-start-insert tag:<C-r>=expand('<cword>')<CR><CR>
 
 nnoremap <silent> <SID>[unite]f
-      \   :<C-u>UniteWithProjectDir -buffer-name=files -no-split
+      \   :<C-u>UniteWithProjectDir -buffer-name=files -no-split -ignorecase
       \   jump_point file_point buffer file_rec/neovim file file/new<CR>
 
 nnoremap <silent> <SID>[unite]g

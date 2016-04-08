@@ -1,23 +1,46 @@
 [[plugins]]
+repo = 'Shougo/vimproc'
+build = 'make'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-build = 'make'
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+hook_add  =  '''
+set background=dark
+au MyAuto VimEnter * colorscheme hybrid
+'''
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'thinca/vim-localrc'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source $VIMRCDIR/rc/plugins/lightline.vim'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]]
-repo = 'kana/vim-operator-user'
-
-[[plugins]]
 repo = 'elzr/vim-json'
 on_ft = 'json'
-
-[[plugins]]
-repo = 'kana/vim-textobj-user'
 
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
@@ -32,34 +55,14 @@ repo = 'rcmdnk/vim-markdown'
 on_ft = ['markdown', 'mkd']
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
+repo = 'xmledit'
+on_ft = 'xml'
 
 [[plugins]]
-repo = 'osyo-manga/vim-precious'
+repo = 'theevocater/thrift.vim'
+on_ft = 'thrift'
 
 [[plugins]]
-repo = 'vim-jp/autofmt'
-
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
-hook_add  =  '''
-set background=dark
-au MyAuto VimEnter * colorscheme hybrid
-'''
-
-[[plugins]]
-repo = 'Shougo/vimproc'
-build = 'make'
-
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = '''
-set t_Co=256
-source $VIMRCDIR/rc/plugins/lightline.vim
-'''
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
-
-[[plugins]]
-repo = 'thinca/vim-localrc'
+repo = 'docker/docker'
+rtp = 'contrib/syntax/vim'
+on_ft = 'dockerfile'

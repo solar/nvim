@@ -57,7 +57,11 @@ on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'tsukkee/unite-help'
-on_source  =  'unite.vim'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Kocha/vim-unite-tig'
+on_source = 'unite.vim'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -166,7 +170,8 @@ hook_add = 'nmap J <Plug>(jplus)'
 
 [[plugins]]
 repo = 'lambdalisue/vim-gita'
-on_cmd = 'Gita'
+on_cmd = ['Gita']
+on_map = [['n',  '<Plug>']]
 hook_add = '''
   nnoremap <silent> <Space>gs  :<C-u>Gita status<CR>
   nnoremap <silent> <Space>gc  :<C-u>Gita commit<CR>
@@ -218,17 +223,26 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'kana/vim-smartchr'
-on_i = 1
-hook_source = '''
-source $VIMRCDIR/rc/plugins/vim-smartchr.vim
+repo = 'othree/eregex.vim'
+on_cmd = ['E2v', 'M', 'S', 'G', 'G!', 'V']
+hook_add = 'let g:eregex_default_enable = 0'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_map = [['nx',  '<Plug>']]
+hook_add = '''
+  let g:caw_no_default_keymappings = 1
+  nmap <buffer> gc <Plug>(caw:prefix)
+  xmap <buffer> gc <Plug>(caw:prefix)
+  nmap <buffer> gcc <Plug>(caw:hatpos:toggle)
+  xmap <buffer> gcc <Plug>(caw:hatpos:toggle)
 '''
 
 [[plugins]]
-repo = 'xmledit'
-on_ft = 'xml'
+repo = 'theevocater/thrift.vim'
+on_ft = 'thrift'
 
 [[plugins]]
-repo = 'othree/eregex.vim'
-on_cmd = ['E2v', 'M', 'S', 'G', 'G!', 'V']
-on_add = 'let g:eregex_default_enable = 0'
+repo = 'docker/docker'
+rtp = 'contrib/syntax/vim'
+on_ft = 'dockerfile'
