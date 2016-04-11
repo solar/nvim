@@ -17,7 +17,7 @@ nnoremap <silent><expr> <SID>[unite]t
 " file rec
 nnoremap <silent> <SID>[unite]f
       \ :<C-u>UniteWithProjectDir -buffer-name=files -no-split -ignorecase
-      \ jump_point file_point buffer file_rec/neovim file file/new<CR>
+      \ jump_point file_point buffer file_rec/async file file/new<CR>
 
 nnoremap <silent> <SID>[unite]g
       \ :<C-u>Unite grep

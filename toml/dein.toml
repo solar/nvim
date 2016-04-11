@@ -72,3 +72,6 @@ repo = 'LeafCage/foldCC.vim'
 hook_add = '''
 set foldtext=FoldCCText()
 '''
+
+[[plugins]]
+repo = 'pearofducks/ansible-vim'

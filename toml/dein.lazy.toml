@@ -232,10 +232,10 @@ repo = 'tyru/caw.vim'
 on_map = [['nx',  '<Plug>']]
 hook_add = '''
   let g:caw_no_default_keymappings = 1
-  nmap <buffer> gc <Plug>(caw:prefix)
-  xmap <buffer> gc <Plug>(caw:prefix)
-  nmap <buffer> gcc <Plug>(caw:hatpos:toggle)
-  xmap <buffer> gcc <Plug>(caw:hatpos:toggle)
+  nmap gc <Plug>(caw:prefix)
+  xmap gc <Plug>(caw:prefix)
+  nmap gcc <Plug>(caw:hatpos:toggle)
+  xmap gcc <Plug>(caw:hatpos:toggle)
 '''
 
 [[plugins]]
