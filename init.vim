@@ -40,7 +40,7 @@ if !has('vim_starting')
   call dein#call_hook('post_source')
 endif
 syntax enable
-filetype plugin indent on
+filetype plugin indent on    " hoge
 
 call s:source_rc('base.vim')
 call s:source_rc('mapping.vim')

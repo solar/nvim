@@ -108,12 +108,15 @@ hook_add = 'xmap p <Plug>(operator-replace)'
 
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
-depends = 'vim-operator-user'
+depends = ['vim-operator-user', 'vim-textobj-anyblock']
 on_map = [['n', '<Plug>']]
 hook_add = '''
-    nmap <silent>Sa <Plug>(operator-surround-append)
-    nmap <silent>Sd <Plug>(operator-surround-delete)
-    nmap <silent>Sr <Plug>(operator-surround-replace)
+    map <silent>sa <Plug>(operator-surround-append)
+    map <silent>sd <Plug>(operator-surround-delete)
+    map <silent>sr <Plug>(operator-surround-replace)
+
+    nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-anyblock-a)
+    nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-anyblock-a)
 '''
 
 [[plugins]]
@@ -123,8 +126,8 @@ repo = 'vim-jp/vital.vim'
 repo = 'rhysd/accelerated-jk'
 on_map = [['n', '<Plug>']]
 hook_add = '''
-    nmap <silent>j <Plug>(accelerated_jk_gj)
-    nmap <silent>k <Plug>(accelerated_jk_gk)
+    nmap j <Plug>(accelerated_jk_gj)
+    nmap k <Plug>(accelerated_jk_gk)
 '''
 
 [[plugins]]
@@ -173,13 +176,15 @@ repo = 'lambdalisue/vim-gita'
 on_cmd = ['Gita']
 on_map = [['n',  '<Plug>']]
 hook_add = '''
-  nnoremap <silent> <Space>gs  :<C-u>Gita status<CR>
-  nnoremap <silent> <Space>gc  :<C-u>Gita commit<CR>
-  nnoremap <silent> <Space>ga  :<C-u>Gita commit --amend<CR>
-  nnoremap <silent> <Space>gd  :<C-u>Gita diff<CR>
-  nnoremap <silent> <Space>gb  :<C-u>Gita browse<CR>
-  nnoremap <silent> <Space>gl  :<C-u>Gita blame<CR>
-  let gita#features#commit#enable_default_mappings = 0
+    nnoremap <silent> <Space>gs  :<C-u>Gita status<CR>
+    nnoremap <silent> <Space>gc  :<C-u>Gita commit<CR>
+    nnoremap <silent> <Space>ga  :<C-u>Gita commit --amend<CR>
+    nnoremap <silent> <Space>gd  :<C-u>Gita diff<CR>
+    nnoremap <silent> <Space>gb  :<C-u>Gita browse<CR>
+    nnoremap <silent> <Space>gl  :<C-u>Gita blame<CR>
+    let gita#features#commit#enable_default_mappings = 0
+
+    au MyAuto FileType gita-status source $VIMRCDIR/rc/plugins/gita.vim
 '''
 
 [[plugins]]
@@ -231,13 +236,41 @@ hook_add = 'let g:eregex_default_enable = 0'
 repo = 'tyru/caw.vim'
 on_map = [['nx',  '<Plug>']]
 hook_add = '''
-  let g:caw_no_default_keymappings = 1
-  nmap gc <Plug>(caw:prefix)
-  xmap gc <Plug>(caw:prefix)
-  nmap gcc <Plug>(caw:hatpos:toggle)
-  xmap gcc <Plug>(caw:hatpos:toggle)
+    let g:caw_no_default_keymappings = 1
+    let g:caw_hatpos_startinsert_at_blank_line = 1
+    let g:caw_hatpos_sp_blank = ' '
+    let g:caw_zeropos_startinsert_at_blank_line = 1
+    let g:caw_zeropos_sp_blank = ' '
+    let g:caw_dollarpos_startinsert_at_blank_line = 1
+    let g:caw_dollarpos_sp_left = ' '
+
+    nmap gc     <Plug>(caw:prefix)
+    xmap gc     <Plug>(caw:prefix)
+    nmap gcc    <Plug>(caw:hatpos:toggle)
+    xmap gcc    <Plug>(caw:hatpos:toggle)
+    nmap gci    <Plug>(caw:hatpos:comment)
+    nmap gcui   <Plug>(caw:hatpos:uncomment)
+    nmap gcI    <Plug>(caw:zeropos:comment)
+    nmap gcuI   <Plug>(caw:zeropos:uncomment)
+    nmap gca    <Plug>(caw:dollarpos:comment)
+    nmap gcua   <Plug>(caw:dollarpos:uncomment)
+    xmap gcb    <Plug>(caw:box:comment)
+    nmap gco    <Plug>(caw:jump:comment-next)
+    nmap gcO    <Plug>(caw:jump:comment-prev)
 '''
 
 [[plugins]]
 repo = 'benekastah/neomake'
 on_cmd = ['Neomake']
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_i = 1
+on_ft = 'snippet'
+hook_source = 'source $VIMRCDIR/rc/plugins/neosnippet.vim'
+
+[[plugins]]
+repo = 'rhysd/vim-textobj-anyblock'
+depends = ['vim-textobj-user']
+on_map = [['n', '<Plug>']]

@@ -1,6 +1,7 @@
 set completeopt+=noinsert
 
 let g:deoplete#disable_auto_complete = 1
+let g:deoplete#refresh_always = 1
 
 inoremap <silent><expr> <C-j>
       \ pumvisible() ? "\<C-n>" :
@@ -23,3 +24,5 @@ inoremap <silent><expr> deoplete#mappings#smart_close_popup() . "'"
 let g:deoplete#sources = {}
 let g:deoplete#sources._ = ['buffer']
 let g:deoplete#sources.scala = ['buffer', 'file', 'tag']
+
+let g:deoplete#sources.python = ['jedi']

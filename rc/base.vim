@@ -54,3 +54,6 @@ set foldclose=
 set showtabline=2
 
 set maxfuncdepth=200
+
+" 編集時にファイルの存在するディレクトリに移動
+au MyAutoCmd BufEnter {?:,}/* execute ":lcd " . expand("%:p:h")

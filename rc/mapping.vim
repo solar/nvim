@@ -28,7 +28,7 @@ nnoremap gk k
 noremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
 " 最後に編集した場所
-nnoremap gc `[v`]
+nnoremap vc `[v`]
 
 " 移動
 nnoremap <Space>h ^

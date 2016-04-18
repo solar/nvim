@@ -74,4 +74,7 @@ set foldtext=FoldCCText()
 '''
 
 [[plugins]]
-repo = 'pearofducks/ansible-vim'
+repo = 'chase/vim-ansible-yaml'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
