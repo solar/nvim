@@ -43,10 +43,6 @@ repo = 'elzr/vim-json'
 on_ft = 'json'
 
 [[plugins]]
-repo = 'derekwyatt/vim-scala'
-on_ft = 'scala'
-
-[[plugins]]
 repo = 'nginx.vim'
 on_ft = 'nginx'
 
@@ -78,3 +74,10 @@ repo = 'chase/vim-ansible-yaml'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'hashivim/vim-hashicorp-tools'
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+on_ft = 'scala'

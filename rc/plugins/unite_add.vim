@@ -6,6 +6,8 @@ nnoremap <silent> <SID>[unite]b   :<C-u>Unite buffer<CR>
 nnoremap <silent> <SID>[unite]H   :<C-u>Unite help<CR>
 nnoremap <silent> <SID>[unite]m   :<C-u>Unite file_mru -start-insert<CR>
 
+nnoremap <silent> <SID>[unite]j :<C-u>Unite jump<CR>
+
 " tag jump
 nnoremap <silent> <SID>[unite]T
       \ :<C-u>Unite -buffer-name=tag tag<CR>
@@ -17,7 +19,7 @@ nnoremap <silent><expr> <SID>[unite]t
 " file rec
 nnoremap <silent> <SID>[unite]f
       \ :<C-u>UniteWithProjectDir -buffer-name=files -no-split -ignorecase
-      \ jump_point file_point buffer file_rec/async file file/new<CR>
+      \ jump_point file_point file_rec/async file file/new<CR>
 
 nnoremap <silent> <SID>[unite]g
       \ :<C-u>Unite grep

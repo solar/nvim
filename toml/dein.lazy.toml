@@ -179,12 +179,13 @@ hook_add = '''
     nnoremap <silent> <Space>gs  :<C-u>Gita status<CR>
     nnoremap <silent> <Space>gc  :<C-u>Gita commit<CR>
     nnoremap <silent> <Space>ga  :<C-u>Gita commit --amend<CR>
-    nnoremap <silent> <Space>gd  :<C-u>Gita diff<CR>
+    nnoremap <silent> <Space>gd  :<C-u>Gita diff --split<CR>
     nnoremap <silent> <Space>gb  :<C-u>Gita browse<CR>
     nnoremap <silent> <Space>gl  :<C-u>Gita blame<CR>
     let gita#features#commit#enable_default_mappings = 0
 
-    au MyAuto FileType gita-status source $VIMRCDIR/rc/plugins/gita.vim
+    au MyAuto FileType gita-status source $VIMRCDIR/rc/plugins/gita-status.vim
+    au MyAuto FileType gita-commit source $VIMRCDIR/rc/plugins/gita-commit.vim
 '''
 
 [[plugins]]
@@ -262,6 +263,7 @@ hook_add = '''
 [[plugins]]
 repo = 'benekastah/neomake'
 on_cmd = ['Neomake']
+hook_add = 'au MyAuto BufWritePost * Neomake'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
@@ -274,3 +276,21 @@ hook_source = 'source $VIMRCDIR/rc/plugins/neosnippet.vim'
 repo = 'rhysd/vim-textobj-anyblock'
 depends = ['vim-textobj-user']
 on_map = [['n', '<Plug>']]
+
+[[plugins]]
+repo = 'ensime/ensime-vim'
+on_ft = 'scala'
+hook_add = 'au MyAuto FileType scala source $VIMRCDIR/rc/plugins/ensime.vim'
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+on_cmd = ['Autoformat']
+hook_add = 'source $VIMRCDIR/rc/plugins/vim-autoformat.vim'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = ['javascript', 'javascript.jsx']

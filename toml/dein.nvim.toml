@@ -15,3 +15,8 @@ on_ft = 'python'
 repo = 'zchee/deoplete-go'
 on_ft = 'go'
 on_i = 1
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = 'javascript'
+on_i = 1

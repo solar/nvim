@@ -6,9 +6,6 @@ let g:deoplete#refresh_always = 1
 inoremap <silent><expr> <C-j>
       \ pumvisible() ? "\<C-n>" :
       \ deoplete#mappings#manual_complete()
-inoremap <silent><expr> <C-k>
-      \ pumvisible() ? "\<C-p>" :
-      \ deoplete#mappings#manual_complete()
 
 inoremap <expr><C-h>  deoplete#mappings#smart_close_popup() . "\<C-h>"
 inoremap <expr><BS>   deoplete#mappings#smart_close_popup() . "\<C-h>"
@@ -26,3 +23,5 @@ let g:deoplete#sources._ = ['buffer']
 let g:deoplete#sources.scala = ['buffer', 'file', 'tag']
 
 let g:deoplete#sources.python = ['jedi']
+
+autocmd MyAuto CompleteDone * if pumvisible() == 0 | pclose | endif

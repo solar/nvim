@@ -16,8 +16,8 @@ set autoindent
 set smartindent
 set tabstop=8
 set expandtab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set backspace=indent,eol,start
 set wrapscan
 set wildmenu
@@ -56,4 +56,4 @@ set showtabline=2
 set maxfuncdepth=200
 
 " 編集時にファイルの存在するディレクトリに移動
-au MyAutoCmd BufEnter {?:,}/* execute ":lcd " . expand("%:p:h")
+au MyAuto BufEnter {?:,}/* execute ":lcd " . expand("%:p:h")
