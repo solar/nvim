@@ -1,0 +1,5 @@
+nmap <buffer>cc <Plug>(gina-commit-open)
+nmap <buffer>cA <Plug>(gina-commit-open-amend)
+nmap <buffer>rm <Plug>(gina-rm)
+nmap <buffer>rc <Plug>(gina-rm-cached)
+nmap <buffer>rr <Plug>(gina-rm-force)

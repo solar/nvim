@@ -36,15 +36,18 @@ let g:lightline = {
 
 let g:lightline.my = {}
 function! g:lightline.my.git_branch() " {{{
-  return gita#statusline#preset('branch')
+  return ''
+  " return gina#component#repo#preset()
 endfunction " }}}
 
 function! g:lightline.my.git_traffic() " {{{
-  return gita#statusline#preset('traffic')
+  return ''
+  " return gina#component#traffic#preset()
 endfunction " }}}
 
 function! g:lightline.my.git_status() " {{{
-  return gita#statusline#preset('status')
+  return ''
+  " return gina#component#status#preset()
 endfunction " }}}
 
 function! s:modified() " {{{

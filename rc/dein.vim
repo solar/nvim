@@ -12,8 +12,7 @@ let s:toml_lazy = '$VIMRCDIR/toml/dein.lazy.toml'
 let s:toml_nvim = '$VIMRCDIR/toml/dein.nvim.toml'
 let s:toml_nvim_lazy = '$VIMRCDIR/toml/dein.nvim.lazy.toml'
 
-call dein#begin(s:path, [expand('<sfile>'),
-      \ s:toml, s:toml_lazy, s:toml_nvim])
+call dein#begin(s:path, [expand('<sfile>')])
 
 call dein#load_toml(s:toml, {'lazy': 0})
 call dein#load_toml(s:toml_lazy, {'lazy': 1})

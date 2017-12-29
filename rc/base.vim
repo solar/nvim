@@ -54,6 +54,23 @@ set foldclose=
 set showtabline=2
 
 set maxfuncdepth=200
+set guicursor=
 
 " 編集時にファイルの存在するディレクトリに移動
 au MyAuto BufEnter {?:,}/* execute ":lcd " . expand("%:p:h")
+
+" use neovim-remote
+if has('nvim')
+  let $VISUAL = 'nvr -cc split --remote-wait'
+endif
+
+if exists('$TMUX')
+    " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
+    let &t_SI .= "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+    let &t_EI .= "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+    autocmd VimLeave * silent !echo -ne "\033Ptmux;\033\033[0 q\033\\"
+else
+    let &t_SI .= "\<Esc>[4 q"
+    let &t_EI .= "\<Esc>[2 q"
+    autocmd VimLeave * silent !echo -ne "\033[0 q"
+endif

@@ -5,6 +5,12 @@ hook_source = 'source $VIMRCDIR/rc/plugins/unite.vim'
 hook_add = 'source $VIMRCDIR/rc/plugins/unite_add.vim'
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+depends = ['neomru.vim', 'denite-gtags']
+hook_source = 'source $VIMRCDIR/rc/plugins/denite.vim'
+hook_add = 'source $VIMRCDIR/rc/plugins/denite_add.vim'
+
+[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = [['n', '<Plug>']]
@@ -172,20 +178,20 @@ on_map = [['n', '<Plug>']]
 hook_add = 'nmap J <Plug>(jplus)'
 
 [[plugins]]
-repo = 'lambdalisue/vim-gita'
-on_cmd = ['Gita']
+repo = 'lambdalisue/gina.vim'
+on_cmd = ['Gina']
 on_map = [['n',  '<Plug>']]
 hook_add = '''
-    nnoremap <silent> <Space>gs  :<C-u>Gita status<CR>
-    nnoremap <silent> <Space>gc  :<C-u>Gita commit<CR>
-    nnoremap <silent> <Space>ga  :<C-u>Gita commit --amend<CR>
-    nnoremap <silent> <Space>gd  :<C-u>Gita diff --split<CR>
-    nnoremap <silent> <Space>gb  :<C-u>Gita browse<CR>
-    nnoremap <silent> <Space>gl  :<C-u>Gita blame<CR>
-    let gita#features#commit#enable_default_mappings = 0
+    nnoremap <silent> <Space>gs  :<C-u>Gina status<CR>
+    nnoremap <silent> <Space>gc  :<C-u>Gina commit<CR>
+    nnoremap <silent> <Space>ga  :<C-u>Gina commit --amend<CR>
+    nnoremap <silent> <Space>gd  :<C-u>Gina diff --split<CR>
+    nnoremap <silent> <Space>gb  :<C-u>Gina browse<CR>
+    nnoremap <silent> <Space>gl  :<C-u>Gina blame<CR>
+    let gina#features#commit#enable_default_mappings = 0
 
-    au MyAuto FileType gita-status source $VIMRCDIR/rc/plugins/gita-status.vim
-    au MyAuto FileType gita-commit source $VIMRCDIR/rc/plugins/gita-commit.vim
+    au MyAuto FileType gina-status source $VIMRCDIR/rc/plugins/gina-status.vim
+    au MyAuto FileType gina-commit source $VIMRCDIR/rc/plugins/gina-commit.vim
 '''
 
 [[plugins]]
@@ -266,21 +272,9 @@ on_cmd = ['Neomake']
 hook_add = 'au MyAuto BufWritePost * Neomake'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_i = 1
-on_ft = 'snippet'
-hook_source = 'source $VIMRCDIR/rc/plugins/neosnippet.vim'
-
-[[plugins]]
 repo = 'rhysd/vim-textobj-anyblock'
 depends = ['vim-textobj-user']
 on_map = [['n', '<Plug>']]
-
-[[plugins]]
-repo = 'ensime/ensime-vim'
-on_ft = 'scala'
-hook_add = 'au MyAuto FileType scala source $VIMRCDIR/rc/plugins/ensime.vim'
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
@@ -294,3 +288,23 @@ on_ft = ['javascript', 'javascript.jsx']
 [[plugins]]
 repo = 'mxw/vim-jsx'
 on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+on_i = 1
+on_ft = 'snippet'
+hook_source = 'source $VIMRCDIR/rc/plugins/neosnippet.vim'
+
+[[plugins]]
+repo = 'sbdchd/neoformat'
+on_cmd = 'Neoformat'
+hook_add = 'source $VIMRCDIR/rc/plugins/neoformat.vim'
+
+[[plugins]]
+repo = 'ozelentok/denite-gtags'
+depends = ['denite.nvim']
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = 'terraform'

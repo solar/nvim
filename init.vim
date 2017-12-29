@@ -45,3 +45,4 @@ filetype plugin indent on    " hoge
 call s:source_rc('base.vim')
 call s:source_rc('mapping.vim')
 call s:source_rc('cmdwin.vim')
+call s:source_rc('terminal.vim')

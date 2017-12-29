@@ -1,5 +1,0 @@
-nmap <buffer>cc <Plug>(gita-commit-open)
-nmap <buffer>cA <Plug>(gita-commit-open-amend)
-nmap <buffer>rm <Plug>(gita-rm)
-nmap <buffer>rc <Plug>(gita-rm-cached)
-nmap <buffer>rr <Plug>(gita-rm-force)

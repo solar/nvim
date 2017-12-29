@@ -43,7 +43,7 @@ repo = 'elzr/vim-json'
 on_ft = 'json'
 
 [[plugins]]
-repo = 'nginx.vim'
+repo = 'vim-scripts/nginx.vim'
 on_ft = 'nginx'
 
 [[plugins]]
@@ -51,7 +51,7 @@ repo = 'rcmdnk/vim-markdown'
 on_ft = ['markdown', 'mkd']
 
 [[plugins]]
-repo = 'xmledit'
+repo = 'vim-scripts/xmledit'
 on_ft = 'xml'
 
 [[plugins]]
@@ -81,3 +81,7 @@ repo = 'hashivim/vim-hashicorp-tools'
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
 on_ft = 'scala'
+
+[[plugins]]
+repo = 'nixprime/cpsm'
+build = 'env PY3=ON ./install.sh'

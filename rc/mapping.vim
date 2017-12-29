@@ -50,6 +50,12 @@ for n in range(1, 9)
   execute 'nnoremap <SID>[tab]' . n . ' :<C-u>tabnext ' . n . '<CR>'
 endfor
 
+" tabs terminal mode
+tnoremap <SID>[tab] <Nop>
+tmap <C-t> <SID>[tab]
+tnoremap <SID>[tab]j <C-\><C-n>gt
+tnoremap <SID>[tab]k <C-\><C-n>gT
+
 " タグを使いやすく
 nnoremap <SID>[tag] <Nop>
 nmap t  <SID>[tag]
