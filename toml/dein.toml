@@ -85,3 +85,4 @@ on_ft = 'scala'
 [[plugins]]
 repo = 'nixprime/cpsm'
 build = 'env PY3=ON ./install.sh'
+

@@ -25,9 +25,6 @@ call denite#custom#map(
 call denite#custom#source(
       \ 'file_mru', 'matchers', ['matcher_cpsm'])
 
-call denite#custom#source(
-      \ 'file_rec', 'matchers', ['matcher_cpsm'])
-
 " Ag command on grep source
 call denite#custom#var('grep', 'command', ['ag'])
 call denite#custom#var('grep', 'default_opts',
