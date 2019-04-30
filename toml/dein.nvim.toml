@@ -1,0 +1,9 @@
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merge = 0
+build = './install.sh nightly'
+hook_add = 'source $VIMRCDIR/rc/plugins/coc.vim'
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_add = 'source $VIMRCDIR/rc/plugins/defx.vim'

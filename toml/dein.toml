@@ -1,0 +1,87 @@
+[[plugins]]
+repo = 'Shougo/vimproc'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+hook_add  =  '''
+set background=dark
+"au MyAuto VimEnter * colorscheme hybrid
+'''
+
+[[plugins]]
+repo = 'dguo/blood-moon'
+rtp = 'applications/vim'
+hook_add = '''
+set background=dark
+'''
+
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+
+[[plugins]]
+repo = 'dracula/vim'
+
+[[plugins]]
+repo = 'patstockwell/vim-monokai-tasty'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'thinca/vim-localrc'
+
+#[[plugins]]
+#repo = 'itchyny/lightline.vim'
+#hook_add = 'source $VIMRCDIR/rc/plugins/lightline.vim'
+
+[[plugins]]
+repo = 'liuchengxu/eleline.vim'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown', 'mkd']
+
+[[plugins]]
+repo = 'vim-scripts/xmledit'
+on_ft = 'xml'
+
+[[plugins]]
+repo = 'docker/docker'
+rtp = 'contrib/syntax/vim'
+on_ft = 'dockerfile'
+
+[[plugins]]
+repo = 'LeafCage/foldCC.vim'
+hook_add = '''
+set foldtext=FoldCCText()
+'''
+
+[[plugins]]
+repo = 'chase/vim-ansible-yaml'
+
+[[plugins]]
+repo = 'hashivim/vim-hashicorp-tools'
