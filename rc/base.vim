@@ -3,6 +3,8 @@ set iminsert=0
 set imsearch=0
 set history=100
 
+set ttimeoutlen=20
+
 set cmdheight=2
 
 let &directory=UserTmpDir()

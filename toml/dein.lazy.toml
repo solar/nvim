@@ -104,23 +104,6 @@ on_map = [['n', '<Plug>']]
 hook_add = 'nmap J <Plug>(jplus)'
 
 [[plugins]]
-repo = 'lambdalisue/gina.vim'
-on_cmd = ['Gina']
-on_map = [['n',  '<Plug>']]
-hook_add = '''
-    nnoremap <silent> <Space>gs  :<C-u>Gina status<CR>
-    nnoremap <silent> <Space>gc  :<C-u>Gina commit<CR>
-    nnoremap <silent> <Space>ga  :<C-u>Gina commit --amend<CR>
-    nnoremap <silent> <Space>gd  :<C-u>Gina diff --split<CR>
-    nnoremap <silent> <Space>gb  :<C-u>Gina browse<CR>
-    nnoremap <silent> <Space>gl  :<C-u>Gina blame<CR>
-    let gina#features#commit#enable_default_mappings = 0
-
-    au MyAuto FileType gina-status source $VIMRCDIR/rc/plugins/gina-status.vim
-    au MyAuto FileType gina-commit source $VIMRCDIR/rc/plugins/gina-commit.vim
-'''
-
-[[plugins]]
 repo = 'easymotion/vim-easymotion'
 on_map = [['n', '<Plug>']]
 hook_add = '''
@@ -191,3 +174,37 @@ on_ft = 'terraform'
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'
 on_ft = ['typescript', 'typescript.tsx']
+
+[[plugins]]
+repo = 'jparise/vim-graphql'
+on_ft = ['graphql']
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
+# [[plugins]]
+# repo = 'lambdalisue/gina.vim'
+# on_cmd = ['Gina']
+# on_map = [['n',  '<Plug>']]
+# hook_add = '''
+#     nnoremap <silent> <Space>gs  :<C-u>Gina status<CR>
+#     nnoremap <silent> <Space>gc  :<C-u>Gina commit<CR>
+#     nnoremap <silent> <Space>ga  :<C-u>Gina commit --amend<CR>
+#     nnoremap <silent> <Space>gd  :<C-u>Gina diff --split<CR>
+#     nnoremap <silent> <Space>gb  :<C-u>Gina browse<CR>
+#     nnoremap <silent> <Space>gl  :<C-u>Gina blame<CR>
+#     let gina#features#commit#enable_default_mappings = 0
+# 
+#     au MyAuto FileType gina-status source $VIMRCDIR/rc/plugins/gina-status.vim
+#     au MyAuto FileType gina-commit source $VIMRCDIR/rc/plugins/gina-commit.vim
+# '''
+
+[[plugins]]                                    
+repo = 'tpope/vim-fugitive'
+on_map = [['n', '<Plug>']]
+on_cmd = ['Git']
+hook_add = '''                                    
+    nnoremap <silent> <Space>gs :Git<CR>
+    nnoremap <silent> <Space>gc :Git commit<CR>                                    
+    nnoremap <silent> <Space>gC :Git commit --amend<CR>                                    
+'''

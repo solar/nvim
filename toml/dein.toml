@@ -39,6 +39,9 @@ repo = 'dracula/vim'
 
 [[plugins]]
 repo = 'patstockwell/vim-monokai-tasty'
+hook_add = '''
+au MyAuto VimEnter * colorscheme vim-monokai-tasty
+'''
 
 [[plugins]]
 repo = 'tpope/vim-repeat'

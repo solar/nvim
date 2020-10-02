@@ -46,3 +46,5 @@ function! UserTmpDir() abort
         return expand('~/tmp/vim')
     endif
 endfunction
+
+set pyx=3
