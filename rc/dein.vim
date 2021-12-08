@@ -1,30 +1,31 @@
-let s:path = expand('$CACHE/dein')
-
 let g:dein#enable_notification = 1
-let g:dein#types#git#default_protocol = 'ssh'
 
-if !dein#load_state(s:path)
-  finish
-endif
+" Required:
+if dein#load_state('/Users/okamura_shimpei/.cache/dein')
+  call dein#begin('/Users/okamura_shimpei/.cache/dein')
 
-let s:toml = '$VIMRCDIR/toml/dein.toml'
-let s:toml_lazy = '$VIMRCDIR/toml/dein.lazy.toml'
-let s:toml_nvim = '$VIMRCDIR/toml/dein.nvim.toml'
-let s:toml_nvim_lazy = '$VIMRCDIR/toml/dein.nvim.lazy.toml'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/okamura_shimpei/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-call dein#begin(s:path, [expand('<sfile>')])
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
 
-call dein#load_toml(s:toml, {'lazy': 0})
-call dein#load_toml(s:toml_lazy, {'lazy': 1})
-if has('nvim')
-  call dein#load_toml(s:toml_nvim, {})
-endif
+  let s:toml = '$VIMRCDIR/toml/dein.toml'
+  let s:toml_lazy = '$VIMRCDIR/toml/dein.lazy.toml'
+  let s:toml_nvim = '$VIMRCDIR/toml/dein.nvim.toml'
+  let s:toml_nvim_lazy = '$VIMRCDIR/toml/dein.nvim.lazy.toml'
 
-call dein#local('$VIMRCDIR/local')
+  call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#load_toml(s:toml_lazy, {'lazy': 1})
+  if has('nvim')
+    call dein#load_toml(s:toml_nvim, {})
+  endif
 
-call dein#end()
-call dein#save_state()
+  call dein#local('$VIMRCDIR/local')
 
-if !has('vim_starting') && dein#check_install()
-  call dein#install()
+  " Required:
+  call dein#end()
+  call dein#save_state()
 endif
