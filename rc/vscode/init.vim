@@ -6,6 +6,8 @@ echo expand($CACHE)
   call mkdir(expand($CACHE), 'p')
 endif
 
+set nofoldenable
+
 let s:data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(s:data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo ' . s:data_dir . '/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

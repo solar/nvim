@@ -44,8 +44,8 @@ nnoremap gi <Cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
 nnoremap ge <Cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap gs <Cmd>call VSCodeNotify('metals.goto-super-method')<CR>
-nnoremap gpd <Cmd>call VSCodeNotify('editor.action.peedDefinition')<CR>
-nnoremap gpt <Cmd>call VSCodeNotify('editor.action.peedTypeDefinition')<CR>
+nnoremap gpd <Cmd>call VSCodeNotify('editor.action.peekDefinition')<CR>
+nnoremap gpt <Cmd>call VSCodeNotify('editor.action.peekTypeDefinition')<CR>
 nnoremap gh <Cmd>call VSCodeNotify('editor.action.showHover')<CR>
 nnoremap gpe <Cmd>call VSCodeNotify('editor.action.peekDeclaration')<CR>
 nnoremap gpi <Cmd>call VSCodeNotify('editor.action.peekImplementation')<CR>
@@ -59,6 +59,7 @@ nnoremap ,q <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
 nnoremap ,sr <Cmd>call VSCodeNotify('editor.action.rename')<CR>
 nnoremap ,io <Cmd>call VSCodeNotify('editor.action.organizeImports')<CR>
 nnoremap ,gl <Cmd>call VSCodeNotify('gitlens.toggleCodeLens')<CR>
+nnoremap ,tt <Cmd>call VSCodeNotify('testing.runCurrentFile')<CR>
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
@@ -85,3 +86,9 @@ nmap <silent>srb <Plug>(operator-surround-replace)<Plug>(textobj-between-a)
 
 vnoremap < <gv
 vnoremap > >gv
+
+" multiblock
+omap ab <Plug>(textobj-multiblock-a)
+omap ib <Plug>(textobj-multiblock-i)
+vmap ab <Plug>(textobj-multiblock-a)
+vmap ib <Plug>(textobj-multiblock-i)
