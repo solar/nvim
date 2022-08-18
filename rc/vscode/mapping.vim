@@ -41,7 +41,7 @@ nnoremap sv <Cmd>call VSCodeNotify('workbench.action.splitEditorRight')<CR>
 " def jump
 nnoremap gd <Cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>
 nnoremap gi <Cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
-nnoremap ge <Cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>
+nnoremap gee <Cmd>call VSCodeNotify('editor.action.goToDeclaration')<CR>
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap gs <Cmd>call VSCodeNotify('metals.goto-super-method')<CR>
 nnoremap gpd <Cmd>call VSCodeNotify('editor.action.peekDefinition')<CR>
@@ -53,10 +53,12 @@ nnoremap gpp <Cmd>call VSCodeNotify('editor.action.togglePeekWidgetFocus')<CR>
 nnoremap ]m <Cmd>call VSCodeNotify('gotoNextPreviousMember.nextMember')<CR>
 nnoremap [m <Cmd>call VSCodeNotify('gotoNextPreviousMember.previousMember')<CR>
 nnoremap ]e <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
+nnoremap gen <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
 nnoremap [e <Cmd>call VSCodeNotify('editor.action.marker.prev')<CR>
+nnoremap gep <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
 nnoremap ,f <Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
 nnoremap ,q <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
-nnoremap ,sr <Cmd>call VSCodeNotify('editor.action.rename')<CR>
+nnoremap ,rr <Cmd>call VSCodeNotify('editor.action.rename')<CR>
 nnoremap ,io <Cmd>call VSCodeNotify('editor.action.organizeImports')<CR>
 nnoremap ,gl <Cmd>call VSCodeNotify('gitlens.toggleCodeLens')<CR>
 nnoremap ,tt <Cmd>call VSCodeNotify('testing.runCurrentFile')<CR>
