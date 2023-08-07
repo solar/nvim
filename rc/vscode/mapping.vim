@@ -9,8 +9,8 @@ nnoremap ; :
 nnoremap <Space>s. <Cmd>call VSCodeNotify('workbench.action.reloadWindow')<CR>
 
 " keep undo/redo lists in sync with vscode
-nmap <silent> u <cmd>call vscodenotify('undo')<cr>
-nmap <silent> <c-r> <cmd>call vscodenotify('redo')<cr>
+nmap <silent> u <cmd>call VSCodeNotify('undo')<cr>
+nmap <silent> <c-r> <cmd>call VSCodeNotify('redo')<cr>
 
 " 不要なキーマップを無効化
 nnoremap ZZ <Nop>
