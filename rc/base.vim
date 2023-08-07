@@ -74,3 +74,8 @@ else
     let &t_EI .= "\<Esc>[2 q"
     autocmd VimLeave * silent !echo -ne "\033[0 q"
 endif
+
+if g:is_mac && executable('im-select')
+  autocmd InsertLeave * :call system('im-select com.apple.keylayout.ABC')
+  autocmd CmdlineLeave * :call system('im-select com.apple.keylayout.ABC')
+endif

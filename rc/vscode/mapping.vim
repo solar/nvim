@@ -8,6 +8,10 @@ nnoremap ; :
 
 nnoremap <Space>s. <Cmd>call VSCodeNotify('workbench.action.reloadWindow')<CR>
 
+" keep undo/redo lists in sync with vscode
+nmap <silent> u <cmd>call vscodenotify('undo')<cr>
+nmap <silent> <c-r> <cmd>call vscodenotify('redo')<cr>
+
 " 不要なキーマップを無効化
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
@@ -18,9 +22,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-
-" ハイライト消去
-noremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
 " 最後に編集した場所
 nnoremap vc `[v`]
