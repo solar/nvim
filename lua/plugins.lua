@@ -48,43 +48,12 @@ if vim.g.vscode == 1 then
     {
       'hashivim/vim-terraform'
     },
-    -- {
-    --   'phaazon/hop.nvim',
-    --   version = 'v2', -- optional but strongly recommended
-    --   config = function()
-    --     -- you can configure Hop the way you like here; see :h hop-config
-    --     require 'hop'.setup {}
-
-    --     keymap('n', '<Space>f', ':HopWord<CR>', keymap_opts)
-    --     keymap('n', '<Space>l', ':HopLineStart<CR>', keymap_opts)
-    --     keymap('n', '<Space>/', ':HopPattern<CR>', keymap_opts)
-    --     keymap('n', '<Space>c', ':HopChar<CR>', keymap_opts)
-    --   end,
-    -- },
     {
-      "folke/flash.nvim",
-      event = "VeryLazy",
-      ---@type Flash.Config
-      opts = {},
-      -- stylua: ignore
-      config = function()
-        require("flash").setup({
-          modes = {
-            char = {
-              enabled = true,
-              keys = { "f", "F", "t", "T"},
-            }
-          }
-          -- Configuration here, or leave empty to use defaults
-        })
+      'ggandor/leap.nvim',
+      config = function(_, opts)
+        local leap = require("leap")
+        leap.add_default_mappings(true)
       end,
-      keys = {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-      },
     }
   }
 else
