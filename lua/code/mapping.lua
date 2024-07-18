@@ -55,9 +55,11 @@ keymap("n", ",rr", "<Cmd>call VSCodeNotify('editor.action.rename')<CR>", opts)
 keymap("n", ",io", "<Cmd>call VSCodeNotify('editor.action.organizeImports')<CR>", opts)
 keymap("n", ",gl", "<Cmd>call VSCodeNotify('gitlens.toggleCodeLens')<CR>", opts)
 keymap("n", ",tt", "<Cmd>call VSCodeNotify('testing.runCurrentFile')<CR>", opts)
-
+keymap("n", ",tc", "<Cmd>call VSCodeNotify('testing.runAtCursor')<CR>", opts)
 keymap({"x", "n", "o"}, "gc", "<Plug>VSCodeCommentary")
 keymap("n", "gcc", "<Plug>VSCodeCommentaryLine")
 
 -- other
 keymap("n", "Y", "y$", opts)
+
+keymap("n", "<Esc><Esc>", "<Cmd>nohlsearch<CR>", opts)

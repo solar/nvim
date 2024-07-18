@@ -1,7 +1,7 @@
 vim.o.undofile = false
 vim.o.termguicolors = false
 
-require("vscode/mapping")
+require("code/mapping")
 
 vim.g.is_mac = vim.fn.has('mac') == 1
 
@@ -26,10 +26,10 @@ require('nvim-treesitter.configs').setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = '<c-space>',
-      node_incremental = '<c-space>',
-      scope_incremental = '<c-s>',
-      node_decremental = '<M-space>',
+      init_selection = 'gnn',
+      node_incremental = 'grn',
+      scope_incremental = 'grc',
+      node_decremental = 'grm',
     },
   },
   textobjects = {

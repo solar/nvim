@@ -8,7 +8,7 @@ require("plugins")
 require("common")
 
 if vim.g.vscode == 1 then
-  require("vscode")
+  require("code")
 else
   require("default")
 end

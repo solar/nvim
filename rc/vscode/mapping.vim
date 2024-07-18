@@ -63,6 +63,7 @@ nnoremap ,rr <Cmd>call VSCodeNotify('editor.action.rename')<CR>
 nnoremap ,io <Cmd>call VSCodeNotify('editor.action.organizeImports')<CR>
 nnoremap ,gl <Cmd>call VSCodeNotify('gitlens.toggleCodeLens')<CR>
 nnoremap ,tt <Cmd>call VSCodeNotify('testing.runCurrentFile')<CR>
+nnoremap ,tc <Cmd>call VSCodeNotify('testing.coverageAtCursor')<CR>
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
