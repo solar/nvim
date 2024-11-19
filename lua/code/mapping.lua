@@ -56,6 +56,7 @@ keymap("n", ",io", "<Cmd>call VSCodeNotify('editor.action.organizeImports')<CR>"
 keymap("n", ",gl", "<Cmd>call VSCodeNotify('gitlens.toggleCodeLens')<CR>", opts)
 keymap("n", ",tt", "<Cmd>call VSCodeNotify('testing.runCurrentFile')<CR>", opts)
 keymap("n", ",tc", "<Cmd>call VSCodeNotify('testing.runAtCursor')<CR>", opts)
+keymap("n", ",tl", "<Cmd>call VSCodeNotify('testing.reRunLastRun')<CR>", opts)
 keymap({"x", "n", "o"}, "gc", "<Plug>VSCodeCommentary")
 keymap("n", "gcc", "<Plug>VSCodeCommentaryLine")
 
