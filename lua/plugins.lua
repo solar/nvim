@@ -24,6 +24,8 @@ if vim.g.vscode == 1 then
     {
       -- Highlight, edit, and navigate code
       'nvim-treesitter/nvim-treesitter',
+      branch = 'master',
+      lazy = false,
       dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
       },
@@ -64,13 +66,9 @@ else
       -- lsp configuration & plugins
       'neovim/nvim-lspconfig',
       dependencies = {
-        -- automatically install lsps to stdpath for neovim
-        { 'williamboman/mason.nvim', config = true },
-        'williamboman/mason-lspconfig.nvim',
-
         -- Useful status updates for LSP
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+        { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
         -- Additional lua configuration, makes nvim stuff amazing!
         'folke/neodev.nvim',
@@ -82,7 +80,13 @@ else
       'hrsh7th/nvim-cmp',
       dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
-        'L3MON4D3/LuaSnip',
+        {
+          "L3MON4D3/LuaSnip",
+          -- follow latest release.
+          version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+          -- install jsregexp (optional!).
+          build = "make install_jsregexp",
+        },
         'saadparwaiz1/cmp_luasnip',
 
         -- Adds LSP completion capabilities
@@ -145,10 +149,12 @@ else
       'lukas-reineke/indent-blankline.nvim',
       -- Enable `lukas-reineke/indent-blankline.nvim`
       -- See `:help indent_blankline.txt`
-      opts = {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      },
+      main = "ibl",
+      opts = {},
+      -- opts = {
+      --     char = '┊',
+      --     show_trailing_blankline_indent = false,
+      -- },
     },
 
     -- "gc" to comment visual regions/lines
@@ -183,7 +189,42 @@ else
       },
       build = ':TSUpdate',
     },
+  }
+end
 
+if vim.g.is_mac == true then
+  local macos_plugins = {
+    {
+      'folke/tokyonight.nvim',
+      config = function()
+        vim.cmd('colorscheme tokyonight')
+      end
+    },
+    {
+      "keaising/im-select.nvim",
+      config = function()
+        require("im_select").setup({
+          default_im_select       = "com.apple.keylayout.ABC",
+
+          default_command         = "/opt/homebrew/bin/macism",
+
+          -- Restore the default input method state when the following events are triggered
+          set_default_events      = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
+
+          -- Restore the previous used input method state when the following events
+          -- are triggered, if you don't want to restore previous used im in Insert mode,
+          -- e.g. deprecated `disable_auto_restore = 1`, just let it empty
+          -- as `set_previous_events = {}`
+          set_previous_events     = { "InsertEnter" },
+
+          -- Show notification about how to install executable binary when binary missed
+          keep_quiet_on_no_binary = false,
+
+          -- Async run `default_command` to switch IM or not
+          async_switch_im         = true,
+        })
+      end,
+    },
   }
 end
 

@@ -4,6 +4,8 @@
 -- vim.g.mapleader = ' '
 -- vim.g.maplocalleader = ' '
 
+vim.g.is_mac = vim.fn.has('mac') == 1
+
 require("plugins")
 require("common")
 
@@ -12,4 +14,3 @@ if vim.g.vscode == 1 then
 else
   require("default")
 end
-
